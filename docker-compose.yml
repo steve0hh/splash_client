@@ -1,0 +1,6 @@
+version: '3.3'
+services:
+  scrapy_slash:
+    image: 'scrapinghub/splash'
+    ports:
+      - '8050:8050'
