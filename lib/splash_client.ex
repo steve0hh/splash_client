@@ -3,6 +3,13 @@ defmodule SplashClient do
   Documentation for SplashClient.
   """
 
+  @doc """
+  Request HTML data from the specified splash server
+
+  ## Examples
+    SplashClient.render_html("http://localhost:8050", "http://www.google.com")
+    "<!DOCTYPE html>...</html>"
+  """
   def render_html(splash_url, url, opts \\ []) do
     build_render_html_url(splash_url, url, opts)
     |> HTTPoison.get!()
@@ -25,7 +32,13 @@ defmodule SplashClient do
   end
 
   @doc """
-  Requests from the splash server the the png
+  Requests the png data from the specified splash_server
+
+  ## Examples
+
+    SplashClient.render_png("http://localhost:8050", "http://www.google.com")
+    <<137, 80, 78 ,15, 97, 0, 0, 15, 97, 1, ...>>
+
   """
   def render_png(splash_url, url, opts \\ []) do
     build_render_png_url(splash_url, url, opts)
@@ -50,6 +63,11 @@ defmodule SplashClient do
   end
 
   @doc """
+  Requests the jpeg data from the specified splash server
+
+  ## Examples
+    SplashClient.render_jpeg("http://localhost:8050", "http://www.google.com")
+    <<137, 80, 78 ,15, 97, 0, 0, 15, 97, 1, ...>>
 
   """
   def render_jpeg(splash_url, url, opts \\ []) do

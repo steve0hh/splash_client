@@ -2,7 +2,7 @@
 
 SplashClient is a simple wrapper API that wraps Scrapyhub's Splash project.
 
-# How to use
+## How to use
 
 Initialise splash
 
@@ -10,11 +10,10 @@ Initialise splash
 docker run -p 8050:8050 scrapinghub/splash
 ```
 
-Example usage
+or if you prefer to use docker-compose
 
-```elixir
-iex> SplashClient.render_png_url("http://www.example.com")
-"http://0.0.0.0:8050/render.png?&url=http://www.example.com"
+```bash
+docker-compose up
 ```
 
 ## Installation
